@@ -1,0 +1,55 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  .brand-name {
+    font-family: 'Lora';
+    font-weight: bold;
+    font-size: 40px
+  }
+
+  .logo {
+    padding-right: 10px;
+    padding-left: 15px;
+  }
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-left: 10px;
+}
+
+.categories a {
+  margin: 0 10px;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}

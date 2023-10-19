@@ -1,0 +1,152 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/Lora-VariableFont_wght.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-display: swap;
+  font-weight: normal;
+  src: url("./fonts/Lato-Regular.ttf") format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-display: swap;
+  font-weight: bold;
+  src: url("./fonts/Lato-Bold.ttf") format("woff");
+}
+:root {
+  --font-base-body-px: 16px;
+  --spacing: 1rem;
+  --vertical-space: calc(var(--gutter));
+  --max-width: 1400px;
+  --width-offset: calc(100% - (2 * var(--offset)));
+  --border-small: 1px;
+  --border-large: 8px;
+  --border-radius: 6px;
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+  --coffee-with-milk: #E1CEC2;
+  --black-coffee: #3C2A1E;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-white1: #fefefe;
+  --color-coffee: #6f4e37;
+  --color-puce-red: #682D2D;
+  --font-base-size: 1rem;
+  --font-family-base: "Noto Sans Display", Helvetica, Arial, sans-serif;
+  --font-family-heading: "Lora", Georgia, serif;
+}
+
+html,
+input,
+select,
+button {
+  font-size: var(--font-base-body-px);
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3 {
+  /* Setjum almennt bil á eftir fyrirsögnum */
+  margin-bottom: var(--spacing);
+  font-family: var(--font-family-heading);
+}
+
+a {
+  color: inherit;
+  background-color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-container .brand-name {
+  font-family: "Lora";
+  font-weight: bold;
+  font-size: 40px;
+}
+.logo-container .logo {
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-left: 10px;
+}
+
+.categories a {
+  margin: 0 10px;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* Adjust this as per your need */
+  background-size: cover;
+}
+
+.header-content h1, .header-content p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
