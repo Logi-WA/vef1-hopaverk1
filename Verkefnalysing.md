@@ -1,6 +1,7 @@
 # Vefforritun 1, 2023, hópverkefni 1
 
-[Kynning í fyrirlestri](https://youtu.be/uX4COJ_WQEo).
+- [Kynning í fyrirlestri](https://youtu.be/uX4COJ_WQEo).
+- [Um Figma](https://youtu.be/NeGCb9dnJLo).
 
 Verkefnið felst í því að smíða vef eftir forskrift.
 
@@ -60,7 +61,7 @@ Tilnefna skal hópstjóra sem skráir sig í ákveðinn hóp undir „Hópverkef
 
 **Útbúa skal hóp jafnvel ef verkefnið er unnið sem einstaklingsverkefni**.
 
-Hópstjóri skal skila fyrir hönd allra í Canvas í seinasta lagi miðvikudaginn 25. október 2023.
+Hópstjóri skal skila fyrir hönd allra í Canvas í seinasta lagi –miðvikudaginn 25.~ fimmtudaginn 26. október 2023.
 
 **Mikilvægt er að öll skil séu gerð í hóp annars munu ekki allir nemendur fá einkunn.**
 
