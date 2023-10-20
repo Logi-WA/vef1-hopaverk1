@@ -1,0 +1,13 @@
+.page-content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    gap: var(--vertical-space);
+  
+    width: var(--width-offset);
+}
+
+.products-new,
+.products-all {
+    background-color: var(--coffee-with-milk);
+}
