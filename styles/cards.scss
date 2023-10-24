@@ -1,10 +1,12 @@
 .product-cards {
-  display: grid;
-  grid-template-rows: auto;
-  gap: var(--vertical-space);
-  justify-items: center;
-
-  width: 100%;
+    
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--vertical-space);
+    justify-items: center;
+    
+    width: var(--width-offset);
+    //width: 100%;
 
   .product-card {
     grid-column: span var(--columns);
