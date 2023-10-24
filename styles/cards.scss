@@ -62,26 +62,26 @@
     border-radius: var(--border-radius);
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: var(--break-high)) {
     .product-card img {
       max-height: 350px;
     }
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: var(--break-low)) {
     .product-card {
       grid-column: span calc(var(--columns) / 2);
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: var(--break-high)) {
     .product-card {
       grid-column: span calc(var(--columns) / 4);
     }
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: var(--break-low)) {
   .product-cards {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
