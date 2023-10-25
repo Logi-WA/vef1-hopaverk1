@@ -1,4 +1,40 @@
 @charset "UTF-8";
+/* https://css-tricks.com/building-css-grid-overlay/ */
+:root {
+  --grid-color: hsla(0, 75%, 75%, 0.25);
+  --grid-repeating-width: calc(100% / var(--columns));
+  --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
+  --grid-background-width: calc(100% + var(--gutter));
+  --grid-background-columns: repeating-linear-gradient(
+    to right,
+    var(--grid-color),
+    var(--grid-color) var(--grid-column-width),
+    transparent var(--grid-column-width),
+    transparent var(--grid-repeating-width)
+  );
+}
+
+html {
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - 2 * var(--offset));
+  min-height: 100vh;
+  background-image: var(--grid-background-columns);
+  background-size: var(--grid-background-width) 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -56,8 +92,8 @@ html {
   --color-coffee: #6f4e37;
   --color-puce-red: #682d2d;
   --font-base-size: 1rem;
-  --font-family-heading: "Lora", serif;
-  --font-family-base: "Lato", sans-serif;
+  --font-family-heading: "Lora", serif; /* Ætti ekki að vera 'Georgia' skv. Google */
+  --font-family-base: "Lato", sans-serif; /* í stað Noto-Sans-Display */
 }
 
 html,
@@ -223,7 +259,7 @@ nav {
   grid-template-rows: auto;
   gap: var(--vertical-space);
   justify-items: center;
-  width: 100%;
+  width: var(--width-offset);
 }
 .product-cards .product-card {
   grid-column: span var(--columns);
@@ -302,12 +338,25 @@ nav {
   grid-template-rows: auto;
   grid-template-columns: 100%;
   gap: var(--vertical-space);
-  width: var(--width-offset);
+  justify-items: center;
 }
 
 .products-new,
-.products-all {
+.products-all,
+.product-list {
+  display: grid;
+  justify-items: center;
+}
+.products-new .background,
+.products-all .background,
+.product-list .background {
+  position: absolute;
+  width: 100%;
+  height: 31%;
   background-color: var(--coffee-with-milk);
+  transform: skewY(-1deg);
+  transform-origin: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=styles.css.map */
