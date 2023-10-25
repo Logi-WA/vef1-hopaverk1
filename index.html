@@ -11,47 +11,45 @@
     />
     <meta property="og:title" content="Tæknibúðin" />
     <meta property="og:description" content="Velkomin í Tæknibúðina!" />
-    <!-- <link rel="styleheet" href="./grid.css" /> -->
   </head>
 
   <body>
     <div class="desktop">
-      <div class="navigation">
-        <div class="logo-container">
-          <img src="./icon/Logo.png" alt="Logo" class="logo" />
-          <span class="brand-name">Tæknibúðin</span>
-        </div>
-        <div class="search">
-          <input type="text" placeholder="Leit eftir heiti,..." />
-          <img src="./icon/Vector.svg" alt="Search Icon" class="search-icon" />
-        </div>
-        <div class="categories">
-          <a href="#">Nýjar vörur</a>
-          <a href="#">Tilboðs vörur</a>
-          <a href="#">Allar vörur</a>
-        </div>
-        <div class="cart">
-          <img src="./icon/Cart icon.svg" alt="Cart Icon" class="cart-icon" />
-          <div class="cart-count">
+      <div class="top-background">
+        <nav>
+          <div class="logo-container">
+            <img src="./icon/Logo.svg" class="Logo" />
+            <h1>Tæknibúðin</h1>
+          </div>
+          <div class="search">
+            <input placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl." />
+            <img src="./icon/Vector.svg" alt="search-img" />
+          </div>
+          <ul class="categories">
+            <li><a href="#">Nýjar vörur</a></li>
+            <li><a href="#">Tilboðs vörur</a></li>
+            <li><a href="#">Allar vörur</a></li>
+          </ul>
+          <div class="cart">
+            <img src="./icon/Cart icon.svg" alt="cart-img" class="cart-icon" />
             <img
               src="./icon/cart count background.svg"
-              alt="Cart Count Background"
-              class="cart-count-bg"
+              alt="cart-count-img"
+              class="cart-icon-background"
             />
-            <span>1</span>
+            <p>1</p>
           </div>
-        </div>
+        </nav>
+
+        <header class="header">
+          <div class="header-content">
+            <h1>Tilboðsvika</h1>
+            <p>Keyptu græjurnar hjá okkur!</p>
+          </div>
+        </header>
       </div>
 
-      <header class="header" style="background-image: url('./myndir/Background.png')">
-        <div class="header-content">
-          <h1>Tilboðsvika</h1>
-          <p>Keyptu græjurnar hjá okkur!</p>
-        </div>
-        <div class="protection"></div>
-      </header>
-
-      <main class="page-content">
+      <section class="page-content">
         <div class="content-new-cta">
           <img src="#" alt="Photo" class="photo" />
           <div class="text">
@@ -62,7 +60,10 @@
         <section class="products-new">
           <div class="product-cards">
             <div class="product-card">
-              <img src="./myndir/alexandre-debieve-FO7JIlwjOtU-unsplash 1.png" alt="Product image" />
+              <img
+                src="./myndir/alexandre-debieve-FO7JIlwjOtU-unsplash 1.png"
+                alt="Product image"
+              />
               <h3 class="title">Tæknilegt móðurborð</h3>
               <div class="tags">
                 <span class="tag">Nýtt</span>
@@ -72,7 +73,10 @@
               <button>SETJA Í KÖRFU</button>
             </div>
             <div class="product-card">
-              <img src="./myndir/alex-knight-2EJCSULRwC8-unsplash 1.png" alt="Product image" />
+              <img
+                src="./myndir/alex-knight-2EJCSULRwC8-unsplash 1.png"
+                alt="Product image"
+              />
               <h3 class="title">Vinalegur vinnuróbot</h3>
               <div class="tags">
                 <span class="tag">Nýtt</span>
@@ -82,7 +86,10 @@
               <button>SETJA Í KÖRFU</button>
             </div>
             <div class="product-card">
-              <img src="./myndir/markus-spiske-iar-afB0QQw-unsplash 1.png" alt="Product image" />
+              <img
+                src="./myndir/markus-spiske-iar-afB0QQw-unsplash 1.png"
+                alt="Product image"
+              />
               <h3 class="title">Matrixið</h3>
               <div class="tags">
                 <span class="tag">Nýtt</span>
@@ -92,7 +99,10 @@
               <button>SETJA Í KÖRFU</button>
             </div>
             <div class="product-card">
-              <img src="./myndir/alex-knight-2EJCSULRwC8-unsplash 1.png" alt="Product image" />
+              <img
+                src="./myndir/alex-knight-2EJCSULRwC8-unsplash 1.png"
+                alt="Product image"
+              />
               <h3 class="title">Vinalegur vinnuróbot</h3>
               <div class="tags">
                 <span class="tag">Nýtt</span>
@@ -116,7 +126,7 @@
         </section>
 
         <div class="section-fill"></div>
-      </main>
+      </section>
 
       <footer class="footer">
         <div class="opening-hours">

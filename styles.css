@@ -1,40 +1,4 @@
 @charset "UTF-8";
-/* https://css-tricks.com/building-css-grid-overlay/ */
-:root {
-  --grid-color: hsla(0, 75%, 75%, 0.25);
-  --grid-repeating-width: calc(100% / var(--columns));
-  --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
-  --grid-background-width: calc(100% + var(--gutter));
-  --grid-background-columns: repeating-linear-gradient(
-    to right,
-    var(--grid-color),
-    var(--grid-color) var(--grid-column-width),
-    transparent var(--grid-column-width),
-    transparent var(--grid-repeating-width)
-  );
-}
-
-html {
-  position: relative;
-}
-
-html::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: calc(100% - 2 * var(--offset));
-  min-height: 100vh;
-  background-image: var(--grid-background-columns);
-  background-size: var(--grid-background-width) 100%;
-  z-index: 1000;
-  pointer-events: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -121,58 +85,111 @@ img {
   max-width: 100%;
 }
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: transparent;
+ul {
+  list-style-type: none;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: 1fr;
+  gap: var(--vertical-space);
+  width: var(--width-offset);
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
 }
 
 .logo-container {
+  grid-column: 1/4;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
-.logo-container .brand-name {
-  font-family: "Lora";
-  font-weight: bold;
+.logo-container h1 {
   font-size: 40px;
+  margin-bottom: 0;
 }
-.logo-container .logo {
-  padding-right: 10px;
-  padding-left: 15px;
-}
-
-.logo {
-  margin-right: 10px;
+.logo-container img {
+  height: 30px;
+  width: 30px;
 }
 
 .search {
-  display: flex;
-  align-items: center;
-}
-
-.search-icon {
-  margin-left: 10px;
-}
-
-.categories a {
-  margin: 0 10px;
-}
-
-.cart {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: 0;
-  right: 0;
+  grid-column: 5/9;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.search input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px black solid;
+  text-indent: 6px;
+  position: relative;
+  z-index: 1;
+}
+.search img {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   width: 20px;
   height: 20px;
+  z-index: 2;
+}
+
+.categories {
+  grid-column: 9/12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.categories a {
+  text-decoration: none;
+}
+
+.cart {
+  grid-column: var(--columns);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cart .cart-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+.cart .cart-icon-background {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 2rem;
+  top: 2rem;
+  z-index: 2;
+}
+.cart p {
+  position: absolute;
+  color: white;
+  font-size: 1rem;
+  top: 2rem;
+  right: 2rem;
+  z-index: 3;
+  margin-right: 6px;
+}
+
+.top-background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/Background.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
 }
 
 .header {
@@ -180,12 +197,25 @@ img {
   justify-content: center;
   align-items: center;
   height: 565px;
-  background-size: cover;
+  width: 100%;
 }
 
-.header-content h1,
-.header-content p {
+.header-content {
+  display: grid;
   text-align: center;
+  position: relative;
+}
+.header-content h1 {
+  font-weight: bold;
+  font-size: 160px;
+  font-family: "Lato";
+  margin-bottom: 12px;
+  grid-column: 2/11;
+}
+.header-content p {
+  font-family: "Lato";
+  font-size: 36px;
+  grid-column: 2/11;
 }
 
 .product-cards {
