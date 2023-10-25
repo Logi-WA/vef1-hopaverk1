@@ -1,12 +1,40 @@
+.top-background {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./myndir/Background.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+}
+
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 565px; //testa height.
-  background-size: cover;
+  width: 100%;
 }
 
-.header-content h1,
-.header-content p {
+.header-content {
+  display: grid;
   text-align: center;
+  position: relative;
+  // z-index: 1;
+
+  h1 {
+    font-weight: bold;
+    font-size: 160px;
+    font-family: "Lato";
+    margin-bottom: 12px;
+    grid-column: 2/11;
+  }
+
+  p {
+    font-family: "Lato";
+    font-size: 36px;
+    grid-column: 2/11;
+  }
 }
