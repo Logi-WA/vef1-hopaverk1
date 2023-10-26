@@ -8,6 +8,8 @@ Til þess að keyra vefsíðu skal keyra skipunina:
 
 ## Uppsetning verkefnis
 
+Leturgerðir eru í möppunni _fonts_, merkið í _icon_, myndirnar í _myndir_, HTML-skrárnar í _pages_ fyrir utan `index.html` og svo eru allar `.scss`skrárnar í _styles_ fyrir utan `styles.scss`.
+
 ### HTML
 
 HTML skrárnar eru fjórar, þ.e. `index.html` sem er forsíðan, `productlist.html` sem sýnir yfirlit yfir margar vörur, `product.html` sem sýnir eina vöru og `order.html` þar sem ætti að vera hægt að kaupa vörur.
