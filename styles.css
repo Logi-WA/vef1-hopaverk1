@@ -1,40 +1,4 @@
 @charset "UTF-8";
-/* https://css-tricks.com/building-css-grid-overlay/ */
-:root {
-  --grid-color: hsla(0, 75%, 75%, 0.25);
-  --grid-repeating-width: calc(100% / var(--columns));
-  --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
-  --grid-background-width: calc(100% + var(--gutter));
-  --grid-background-columns: repeating-linear-gradient(
-    to right,
-    var(--grid-color),
-    var(--grid-color) var(--grid-column-width),
-    transparent var(--grid-column-width),
-    transparent var(--grid-repeating-width)
-  );
-}
-
-html {
-  position: relative;
-}
-
-html::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: calc(100% - 2 * var(--offset));
-  min-height: 100vh;
-  background-image: var(--grid-background-columns);
-  background-size: var(--grid-background-width) 100%;
-  z-index: 1000;
-  pointer-events: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -126,6 +90,15 @@ img {
 
 ul {
   list-style-type: none;
+}
+
+.desktop {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  /** grid items eru miðjuð **/
+  justify-items: center;
+  gap: var(--vertical-space);
 }
 
 nav {
@@ -226,7 +199,7 @@ nav {
 }
 
 .top-background {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/Background.png");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/desk-background.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -320,24 +293,6 @@ nav {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
   }
-}
-.tags {
-  display: inline-flex;
-  gap: calc(var(--spacing) / 2);
-}
-.tags .tag {
-  background-color: var(--coffee-with-milk);
-  padding: calc(var(--spacing) / 2);
-  border-radius: var(--border-radius);
-}
-
-.desktop {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 100%;
-  /** grid items eru miðjuð **/
-  justify-items: center;
-  gap: var(--vertical-space);
 }
 
 .page-content {
@@ -607,6 +562,65 @@ h1 {
   padding: calc(var(--spacing) / 2);
   border-radius: var(--border-radius);
   border: 0;
+}
+
+.footer {
+  background-color: var(--black-coffee);
+  width: 100%;
+}
+.footer .forms {
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: var(--vertical-space);
+  width: var(--width-offset);
+  margin-left: auto;
+  margin-right: auto;
+  height: 270px;
+}
+.footer h1,
+.footer p,
+.footer a {
+  font-family: "Lato";
+  color: #fefefe;
+  text-decoration: none;
+}
+.footer h1 {
+  border-bottom: 2px solid var(--coffee-with-milk);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+.footer p {
+  font-size: 1rem;
+  line-height: 24px;
+  margin-top: 12px;
+}
+
+.copyright p {
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+.opening-hours {
+  grid-column: 1/5;
+}
+
+.contact {
+  grid-column: 5/9;
+}
+
+.other {
+  grid-column: 9/13;
+}
+
+.copyright {
+  grid-column: 3/11;
+  border-top: 1px solid var(--color-coffee);
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
