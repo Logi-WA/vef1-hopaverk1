@@ -12,8 +12,10 @@
 .product-list {
   display: grid;
   justify-items: center;
+  background-color: var(--coffee-with-milk);
+  padding: var(--vertical-space) 0;
 
-  .background {
+  /*.background {
     position: absolute;
     width: 100%;
     height: 31%;
@@ -21,5 +23,33 @@
     transform: skewY(-1deg);
     transform-origin: 0;
     z-index: -1;
+  }*/
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--vertical-space);
+  justify-items: center;
+
+  width: var(--width-offset);
+  
+  .full-span {
+    grid-column: span var(--columns);
+    width: 100%;
+  }
+
+  .half-span {
+    grid-column: span calc(var(--columns) / 2);
+    width: 100%;
+  }
+
+  .middle-span-8 {
+    grid-column: 3 / span 8;
   }
 }

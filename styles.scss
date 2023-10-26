@@ -4,11 +4,15 @@
 @import "styles/fonts";
 @import "styles/config";
 @import "styles/base";
+@import "styles/desktop";
 @import "styles/navigation";
 @import "styles/navmenu";
 @import "styles/navscale";
 @import "styles/header";
 @import "styles/cards";
-@import "styles/desktop";
 @import "styles/page-content";
+@import "styles/cta.scss";
+@import "styles/order.scss";
+@import "styles/product.scss";
+@import "styles/filter.scss";
 @import "styles/footer";

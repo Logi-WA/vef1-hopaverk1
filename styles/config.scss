@@ -7,6 +7,8 @@
   --max-width: 1400px;
   --width-offset: calc(100% - (2 * var(--offset)));
 
+  --width-column: calc(var(--width-offset) - (11 * var(var(--vertical-space))));
+
   --border-small: 1px;
   --border-large: 8px;
   --border-radius: 6px;
@@ -27,6 +29,7 @@
   --color-puce-red: #682d2d;
 
   --font-base-size: 1rem;
-  --font-family-heading: "Lora", serif; /* Ætti ekki að vera 'Georgia' skv. Google */
+  --font-family-heading: "Lato", sans-serif; /* Ætti ekki að vera 'Georgia' skv. Google */
   --font-family-base: "Lato", sans-serif; /* í stað Noto-Sans-Display */
+  --font-family-logo: "Lora", serif;
 }

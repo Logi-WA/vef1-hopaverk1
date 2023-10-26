@@ -34,7 +34,7 @@
   }
 
   p {
-    font-family: "Lato";
+    font-family: var(--font-family-heading);
     font-size: 36px;
     grid-column: span var(--columns);
     line-height: 48px;
