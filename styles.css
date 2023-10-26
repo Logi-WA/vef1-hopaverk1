@@ -583,7 +583,7 @@ h1 {
   object-fit: cover;
   object-position: top center;
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .content-new-cta img,
   .content-new-cta .text,
   .content-all-cta img,
@@ -749,7 +749,7 @@ h1 {
   border-radius: var(--border-radius);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .product-desc .half-span {
     grid-column: span var(--columns);
   }

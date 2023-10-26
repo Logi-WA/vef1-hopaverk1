@@ -29,7 +29,7 @@
         object-position: top center;
     }
 
-    @media (min-width: 500px) {
+    @media (min-width: 600px) {
         img,
         .text {
             grid-column: span calc(var(--columns) / 2);
