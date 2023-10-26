@@ -26,13 +26,30 @@
   }*/
 }
 
-.tags {
-    display: inline-flex;
-    gap: calc(var(--spacing) / 2);
+h1 {
+    font-size: 60px;
+}
 
-    .tag {
-        background-color: var(--coffee-with-milk);
-        padding: calc(var(--spacing) / 2);
-        border-radius: var(--border-radius);
-    }
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--vertical-space);
+  justify-items: center;
+
+  width: var(--width-offset);
+  
+  .full-span {
+    grid-column: span var(--columns);
+    width: 100%;
+  }
+
+  .half-span {
+    grid-column: span calc(var(--columns) / 2);
+    width: 100%;
+  }
+
+  .middle-span-8 {
+    grid-column: 3 / span 8;
+  }
 }
