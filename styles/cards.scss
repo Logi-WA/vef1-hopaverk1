@@ -57,7 +57,7 @@
     }
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     .product-card {
       grid-column: span calc(var(--columns) / 2);
     }
@@ -70,7 +70,7 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .product-cards {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
