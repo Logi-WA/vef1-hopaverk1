@@ -353,17 +353,14 @@ nav {
 .product-list {
   display: grid;
   justify-items: center;
-  background-color: var(--coffee-with-milk);
   padding: var(--vertical-space) 0;
-  /*.background {
-    position: absolute;
-    width: 100%;
-    height: 31%;
-    background-color: var(--coffee-with-milk);
-    transform: skewY(-1deg);
-    transform-origin: 0;
-    z-index: -1;
-  }*/
+}
+.products-new .background,
+.products-all .background,
+.product-list .background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 h1 {
@@ -390,6 +387,17 @@ h1 {
   grid-column: 3/span 8;
 }
 
+.product-list {
+  background-color: var(--coffee-with-milk);
+}
+
+@media (max-height: 1000px) {
+  .products-new,
+  .products-all,
+  .product-list {
+    background-color: var(--coffee-with-milk);
+  }
+}
 .content-new-cta,
 .content-all-cta {
   display: grid;

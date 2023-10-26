@@ -16,7 +16,7 @@ HTML skrárnar eru fjórar, þ.e. `index.html` sem er forsíðan, `productlist.h
 
 Hver skrá er með sama haus og fót en annars er hver síða með sitt eigið meginmál þar á milli.
 
-## CSS
+### CSS
 
 Notað var SCSS til þess að flokka CSS-ið í skrár en þær eru töluvert margar. Skrárnar sem upphafsstilla eru `base.scss`,`config.scss`, `fonts.scss` og `reset.scss`. Restin á við um ákveðna hluta af vefsíðunni. 
 
