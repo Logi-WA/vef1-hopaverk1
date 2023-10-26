@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Forsíða</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <meta name="description" content="" />
     <meta property="og:title" content="Vara" />
     <meta property="og:description" content="" />
@@ -12,29 +12,94 @@
 
   <body>
     <div class="desktop">
-      <div class="navigation">
+      <nav>
         <div class="logo-container">
-          <img src="./icon/Logo.png" alt="Logo" class="logo" />
-          <span class="brand-name">Tæknibúðin</span>
+          <img src="../icon/Logo.svg" class="Logo" />
+          <h1>Tæknibúðin</h1>
         </div>
         <div class="search">
-          <input type="text" placeholder="Leit eftir heiti,..." />
-          <img src="./icon/Vector.svg" alt="Search Icon" class="search-icon" />
+          <input placeholder="Leit eftir heiti, vörunúmeri, lýsingu o.fl." />
+          <img src="../icon/Vector.svg" alt="search-img" />
         </div>
-        <div class="categories">
-          <a href="#">Nýjar vörur</a>
-          <a href="#">Tilboðs vörur</a>
-          <a href="#">Allar vörur</a>
-        </div>
+        <ul class="categories">
+          <li><a href="#">Nýjar vörur</a></li>
+          <li><a href="#">Tilboðs vörur</a></li>
+          <li><a href="#">Allar vörur</a></li>
+        </ul>
         <div class="cart">
-          <img src="./icon/Cart icon.svg" alt="Cart Icon" class="cart-icon" />
-          <div class="cart-count">
+          <img src="../icon/Cart icon.svg" alt="cart-img" class="cart-icon" />
+          <img
+            src="../icon/cart count background.svg"
+            alt="cart-count-img"
+            class="cart-icon-background"
+          />
+          <p>1</p>
+        </div>
+      </nav>
+
+      <div class="product-desc">
+        <img src="../myndir/alexandre-debieve-FO7JIlwjOtU-unsplash 1.png" alt="Photo" class="photo" />
+        <div class="text">
+          <h1>Tæknilegt móðurborð</h1>
+
+          <div class="tags">
+            <span class="tag">Nýtt</span>
+            <span class="tag">Takmarkað magn</span>
+          </div>
+
+          <p>
+            Afskaplega gott, tæknilegt, og traust móðurborð. 
+            Passar vel í allar gerðir tölva sem taka við 
+            tæknilegum móðurborðum. Nam lobortis tellus 
+            tellus, vulputate pellentesque mi tempus non. 
+            Nunc luctus ac ligula id fringilla. Aliquam id 
+            lacus id ipsum suscipit pellentesque et a ante. 
+            Nullam vitae nisi pharetra, rhoncus dolor eu, 
+            condimentum mauris. Nunc gravida id nulla a 
+            accumsan. Duis id sapien ac risus luctus porta 
+            nec sed ante. Nam quis ex quis dolor auctor 
+            vehicula. 
+          </p>
+
+          <p class="price">189.000 kr.</p>
+
+          <button>SETJA Í KÖRFU</button>
+        </div>
+      </div>
+
+      <div class="product-stats">
+
+      </div>
+
+      <div class="product-list">
+        <h2>Tengdar vörur</h2>
+
+        <div class="product-cards">
+          <div class="product-card">
             <img
-              src="./icon/cart count background.svg"
-              alt="Cart Count Background"
-              class="cart-count-bg"
+              src="../myndir/alex-knight-2EJCSULRwC8-unsplash 1.png"
+              alt="Product image"
             />
-            <span>1</span>
+            <h3 class="title">Vinalegur vinnuróbot</h3>
+            <div class="tags">
+              <span class="tag">Nýtt</span>
+              <span class="tag">Ekki fyrir börn</span>
+            </div>
+            <p class="price">1.499.990 kr.</p>
+            <button>SETJA Í KÖRFU</button>
+          </div>
+          <div class="product-card">
+            <img
+              src="../myndir/markus-spiske-iar-afB0QQw-unsplash 1.png"
+              alt="Product image"
+            />
+            <h3 class="title">Matrixið</h3>
+            <div class="tags">
+              <span class="tag">Nýtt</span>
+              <span class="tag">Ekki fyrir róbota</span>
+            </div>
+            <p class="price">299.999.999.499.999 kr.</p>
+            <button>SETJA Í KÖRFU</button>
           </div>
         </div>
       </div>
