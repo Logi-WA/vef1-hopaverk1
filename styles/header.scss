@@ -27,13 +27,13 @@
   h1 {
     font-weight: bold;
     font-size: 160px;
-    font-family: "Lato";
+    font-family: var(--font-family-heading);
     margin-bottom: 12px;
     grid-column: 2/11;
   }
 
   p {
-    font-family: "Lato";
+    font-family: var(--font-family-heading);
     font-size: 36px;
     grid-column: 2/11;
   }
