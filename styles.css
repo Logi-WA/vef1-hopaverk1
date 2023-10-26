@@ -40,6 +40,7 @@ html {
   --vertical-space: calc(var(--gutter));
   --max-width: 1400px;
   --width-offset: calc(100% - (2 * var(--offset)));
+  --width-column: calc(var(--width-offset) - (11 * var(var(--vertical-space))));
   --border-small: 1px;
   --border-large: 8px;
   --border-radius: 6px;
@@ -56,8 +57,9 @@ html {
   --color-coffee: #6f4e37;
   --color-puce-red: #682d2d;
   --font-base-size: 1rem;
-  --font-family-heading: "Lora", serif; /* Ætti ekki að vera 'Georgia' skv. Google */
+  --font-family-heading: "Lato", sans-serif; /* Ætti ekki að vera 'Georgia' skv. Google */
   --font-family-base: "Lato", sans-serif; /* í stað Noto-Sans-Display */
+  --font-family-logo: "Lora", serif;
 }
 
 html,
@@ -72,6 +74,7 @@ h1,
 h2,
 h3 {
   /* Setjum almennt bil á eftir fyrirsögnum */
+  font-weight: 400;
   margin-bottom: var(--spacing);
   font-family: var(--font-family-heading);
 }
@@ -119,6 +122,8 @@ nav {
 .logo-container h1 {
   font-size: 40px;
   margin-bottom: 0;
+  font-family: var(--font-family-logo);
+  font-weight: bold;
 }
 .logo-container img {
   height: 30px;
@@ -205,7 +210,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 565px;
+  height: 565px; /* testa height. */
   width: 100%;
 }
 
@@ -213,16 +218,17 @@ nav {
   display: grid;
   text-align: center;
   position: relative;
+  /* z-index: 1; */
 }
 .header-content h1 {
   font-weight: bold;
   font-size: 160px;
-  font-family: "Lato";
+  font-family: var(--font-family-heading);
   margin-bottom: 12px;
   grid-column: 2/11;
 }
 .header-content p {
-  font-family: "Lato";
+  font-family: var(--font-family-heading);
   font-size: 36px;
   grid-column: 2/11;
 }
@@ -254,15 +260,6 @@ nav {
 .product-cards .product-card .title {
   margin-bottom: calc(var(--spacing) * 0.5);
   border-bottom: var(--border-small) solid var(--color-dark);
-}
-.product-cards .product-card .tags {
-  display: inline-flex;
-  gap: calc(var(--spacing) / 2);
-}
-.product-cards .product-card .tags .tag {
-  background-color: var(--coffee-with-milk);
-  padding: calc(var(--spacing) / 2);
-  border-radius: var(--border-radius);
 }
 .product-cards .product-card .price {
   flex: 1;
@@ -297,6 +294,7 @@ nav {
     grid-template-rows: auto;
   }
 }
+
 .page-content {
   display: grid;
   grid-template-rows: auto;
@@ -310,17 +308,260 @@ nav {
 .product-list {
   display: grid;
   justify-items: center;
-}
-.products-new .background,
-.products-all .background,
-.product-list .background {
-  position: absolute;
-  width: 100%;
-  height: 31%;
   background-color: var(--coffee-with-milk);
-  transform: skewY(-1deg);
-  transform-origin: 0;
-  z-index: -1;
+  padding: var(--vertical-space) 0;
+  /*.background {
+    position: absolute;
+    width: 100%;
+    height: 31%;
+    background-color: var(--coffee-with-milk);
+    transform: skewY(-1deg);
+    transform-origin: 0;
+    z-index: -1;
+  }*/
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--vertical-space);
+  justify-items: center;
+  width: var(--width-offset);
+}
+.grid .full-span {
+  grid-column: span var(--columns);
+  width: 100%;
+}
+.grid .half-span {
+  grid-column: span calc(var(--columns) / 2);
+  width: 100%;
+}
+.grid .middle-span-8 {
+  grid-column: 3/span 8;
+}
+
+.content-new-cta,
+.content-all-cta {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--vertical-space);
+  justify-items: center;
+  padding: var(--vertical-space) 0;
+  width: var(--width-offset);
+}
+.content-new-cta img,
+.content-new-cta .text,
+.content-all-cta img,
+.content-all-cta .text {
+  grid-column: span var(--columns);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--vertical-space);
+}
+.content-new-cta img,
+.content-all-cta img {
+  max-height: 272px;
+  object-fit: cover;
+  object-position: top center;
+}
+@media (min-width: 500px) {
+  .content-new-cta img,
+  .content-new-cta .text,
+  .content-all-cta img,
+  .content-all-cta .text {
+    grid-column: span calc(var(--columns) / 2);
+  }
+}
+@media (min-width: 1000px) {
+  .content-new-cta img,
+  .content-all-cta img {
+    grid-column: 3/span calc(var(--columns) / 3);
+  }
+  .content-new-cta .text,
+  .content-all-cta .text {
+    grid-column: 7/span calc(var(--columns) / 3);
+  }
+}
+
+.order {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--vertical-space);
+  justify-items: center;
+  width: var(--width-offset);
+}
+.order .form {
+  grid-column: 1/span 6;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--vertical-space);
+}
+.order .form fieldset {
+  border: 0;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--vertical-space);
+}
+.order .form fieldset legend {
+  font-size: 32px;
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+.order .form fieldset .input-container {
+  grid-column: span 1;
+  width: 100%;
+}
+.order .form fieldset .input-container .label {
+  font-size: 20px;
+  width: 100%;
+}
+.order .form fieldset .input-container .input {
+  width: 100%;
+  padding: calc(var(--spacing) / 3);
+}
+.order .form button {
+  margin-top: var(--spacing);
+  width: fit-content;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--black-coffee);
+  background-color: var(--color-coffee);
+  color: var(--color-white);
+}
+.order .current-cart {
+  grid-column: 7/span 6;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: start;
+}
+.order .current-cart .product,
+.order .current-cart .total {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  gap: var(--vertical-space);
+}
+.order .current-cart .product img,
+.order .current-cart .total img {
+  grid-column: 1/span 1;
+  aspect-ratio: 1/1;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.order .current-cart .product .title,
+.order .current-cart .total .title {
+  grid-column: 2/span 3;
+}
+.order .current-cart .product .price,
+.order .current-cart .total .price {
+  grid-column: span 2/7;
+  text-align: right;
+}
+.order .current-cart .product .text,
+.order .current-cart .total .text {
+  grid-column: 1/span 3;
+  font-weight: bold;
+}
+.order .current-cart .product .sum,
+.order .current-cart .total .sum {
+  grid-column: span 3/7;
+  text-align: right;
+  font-weight: bold;
+}
+.order .current-cart .product {
+  margin-bottom: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-bottom: 1px solid var(--coffee-with-milk);
+}
+
+@media (max-width: 500px) {
+  .order .form,
+  .order .current-cart {
+    grid-column: span var(--columns);
+  }
+}
+.product-stats h2,
+.product-desc h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+.product-stats h3,
+.product-desc h3 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: var(--spacing);
+}
+.product-stats p,
+.product-desc p {
+  line-height: 160%;
+  font-size: 20px;
+}
+
+.product-desc .text {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--spacing);
+}
+.product-desc .text .buy {
+  display: grid;
+  grid-template-columns: repeat(calc(var(--columns) / 2), 1fr);
+  align-items: center;
+}
+.product-desc .text .buy p {
+  grid-column: 1/span 3;
+  font-weight: bold;
+}
+.product-desc .text .buy button {
+  grid-column: 4/span 3;
+  color: var(--black-coffee);
+  border-color: var(--black-coffee);
+  background-color: var(--color-white);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 500px) {
+  .product-desc .half-span {
+    grid-column: span var(--columns);
+  }
+}
+.filter {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: 1fr;
+  width: var(--width-offset);
+}
+.filter h2 {
+  grid-column: span var(--columns);
+  margin: 0;
+}
+.filter .buttons {
+  grid-column: span var(--columns);
+  display: inline-flex;
+  gap: calc(var(--spacing) / 2);
+}
+.filter .buttons button {
+  background-color: var(--coffee-with-milk);
+  padding: calc(var(--spacing) / 2);
+  border-radius: var(--border-radius);
+  border: 0;
 }
 
 .footer {
