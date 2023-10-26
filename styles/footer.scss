@@ -60,3 +60,20 @@
   border-top: 1px solid var(--color-coffee);
   text-align: center;
 }
+
+@media (max-width: 999px) {
+  .opening-hours,
+  .contact,
+  .other {
+    grid-column: span var(--columns);
+  }
+
+  footer {
+    height: 527px;
+  }
+  
+  .forms {
+    grid-template-rows: repeat(3, auto); 
+    height: auto;
+  }
+}
