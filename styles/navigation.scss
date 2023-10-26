@@ -10,14 +10,16 @@ nav {
 }
 
 .logo-container {
-  grid-column: 1/4;
+  grid-column: 1/10;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  height: 60px;
+  z-index: 3;
 
   h1 {
-    font-size: 40px;
+    font-size: 24px;
     margin-bottom: 0;
     font-family: var(--font-family-logo);
     font-weight: bold;
@@ -29,48 +31,8 @@ nav {
   }
 }
 
-.search {
-  grid-column: 5/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  input {
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px black solid;
-    text-indent: 6px;
-    // padding-right: 40px;
-    position: relative;
-    z-index: 1;
-  }
-
-  img {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    z-index: 2;
-  }
-}
-
-.categories {
-  grid-column: 9 / 12;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    text-decoration: none;
-  }
-}
-
 .cart {
-  grid-column: var(--columns);
+  grid-column: calc(var(--columns) - 1);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -80,17 +42,17 @@ nav {
     width: 30px;
     height: 30px;
     top: 15px;
-    right: 15px;
-    z-index: 1;
+    right: 70px;
+    z-index: 3;
   }
 
   .cart-icon-background {
     position: absolute;
     width: 20px;
     height: 20px;
-    right: 2rem;
+    right: 87px;
     top: 2rem;
-    z-index: 2;
+    z-index: 4;
   }
 
   p {
@@ -98,8 +60,8 @@ nav {
     color: white;
     font-size: 1rem;
     top: 2rem;
-    right: 2rem;
-    z-index: 3;
+    right: 87px;
+    z-index: 5;
     margin-right: 6px;
   }
 }

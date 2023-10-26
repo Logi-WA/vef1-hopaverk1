@@ -3,18 +3,20 @@
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("./myndir/desk-background.png");
+    url("./myndir/mob-bground.png");
   background-size: cover;
-  background-position: center;
+  background-position-x: 0px;
+  background-position-y: 0px;
   position: relative;
   width: 100%;
+  height: 322px;
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 565px; /* testa height. */
+  height: 262px; //testa height.
   width: 100%;
 }
 
@@ -22,19 +24,71 @@
   display: grid;
   text-align: center;
   position: relative;
-  /* z-index: 1; */
 
   h1 {
     font-weight: bold;
-    font-size: 160px;
-    font-family: var(--font-family-heading);
-    margin-bottom: 12px;
-    grid-column: 2/11;
+    font-size: 80px;
+    font-family: "Lato";
+    margin-bottom: 0;
+    grid-column: span var(--columns);
   }
 
   p {
     font-family: var(--font-family-heading);
     font-size: 36px;
-    grid-column: 2/11;
+    grid-column: span var(--columns);
+    line-height: 48px;
+  }
+}
+
+@media (min-width: 500px) {
+  .top-background {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("./myndir/mob-bground.png");
+    background-size: cover;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    position: relative;
+    width: 100%;
+    height: 444px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .top-background {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("./myndir/Background.png");
+    width: 100%;
+    height: 565px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 505px; //testa height.
+    width: 100%;
+  }
+
+  .header-content {
+    h1 {
+      font-weight: bold;
+      font-size: 160px;
+      font-family: "Lato";
+      margin-bottom: 12px;
+      grid-column: 2/11;
+    }
+
+    p {
+      font-family: "Lato";
+      font-size: 36px;
+      grid-column: 2/11;
+    }
   }
 }
