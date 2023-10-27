@@ -513,12 +513,14 @@ nav {
   display: grid;
   justify-items: center;
   padding: var(--vertical-space) 0;
+  position: relative;
 }
 .products-new .background,
 .products-all .background,
 .product-list .background {
   position: absolute;
   width: 100%;
+  top: -35px;
   z-index: -1;
 }
 
@@ -550,11 +552,13 @@ h1 {
   background-color: var(--coffee-with-milk);
 }
 
-@media (max-height: 1000px) {
+@media (max-width: 1000px) {
   .products-new,
-  .products-all,
-  .product-list {
+  .products-all {
     background-color: var(--coffee-with-milk);
+  }
+  .products-all .background {
+    display: none;
   }
 }
 .content-new-cta,
