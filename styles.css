@@ -1,4 +1,37 @@
 @charset "UTF-8";
+/* https://css-tricks.com/building-css-grid-overlay/ */
+:root {
+  --grid-color: hsl(0deg 75% 75% / 25%);
+  --grid-repeating-width: calc(100% / var(--columns));
+  --grid-column-width: calc((100% / var(--columns)) - var(--gutter));
+  --grid-background-width: calc(100% + var(--gutter));
+  --grid-background-columns: repeating-linear-gradient(
+    to right,
+    var(--grid-color),
+    var(--grid-color) var(--grid-column-width),
+    transparent var(--grid-column-width),
+    transparent var(--grid-repeating-width)
+  );
+}
+
+html {
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - 2 * var(--offset));
+  min-height: 100vh;
+  background-image: var(--grid-background-columns);
+  background-size: var(--grid-background-width) 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,20 +48,20 @@ html {
 }
 
 @font-face {
-  font-family: "Lora";
+  font-family: Lora;
   font-style: normal;
   font-display: swap;
   src: url("./fonts/Lora-VariableFont_wght.ttf") format("woff");
 }
 @font-face {
-  font-family: "Lato";
+  font-family: Lato;
   font-style: normal;
   font-display: swap;
   font-weight: normal;
   src: url("./fonts/Lato-Regular.ttf") format("woff");
 }
 @font-face {
-  font-family: "Lato";
+  font-family: Lato;
   font-style: normal;
   font-display: swap;
   font-weight: bold;
@@ -51,8 +84,8 @@ html {
   --break-low: 500px; /* virkar ekki */
   --coffee-with-milk: #e1cec2;
   --black-coffee: #3c2a1e;
-  --color-black: #000000;
-  --color-white: #ffffff;
+  --color-black: #000;
+  --color-white: #fff;
   --color-white1: #fefefe;
   --color-coffee: #6f4e37;
   --color-puce-red: #682d2d;
@@ -254,7 +287,7 @@ nav {
   z-index: 3;
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .logo-container {
     grid-column: 1/4;
     display: flex;
@@ -355,10 +388,14 @@ nav {
   }
 }
 .top-background {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/mob-bground.png");
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./myndir/mob-bground.png");
   background-size: cover;
-  background-position-x: 0px;
-  background-position-y: 0px;
+  background-position-x: 0;
+  background-position-y: 0;
   position: relative;
   width: 100%;
   height: 322px;
@@ -380,7 +417,7 @@ nav {
 .header-content h1 {
   font-weight: bold;
   font-size: 80px;
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
   margin-bottom: 0;
   grid-column: span var(--columns);
 }
@@ -391,20 +428,28 @@ nav {
   line-height: 48px;
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .top-background {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/mob-bground.png");
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("./myndir/mob-bground.png");
     background-size: cover;
-    background-position-x: 0px;
-    background-position-y: 0px;
+    background-position-x: 0;
+    background-position-y: 0;
     position: relative;
     width: 100%;
     height: 444px;
   }
 }
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .top-background {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./myndir/desk-background.png");
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("./myndir/mob-bground.png");
     width: 100%;
     height: 565px;
   }
@@ -418,12 +463,12 @@ nav {
   .header-content h1 {
     font-weight: bold;
     font-size: 160px;
-    font-family: "Lato";
+    font-family: Lato, sans-serif;
     margin-bottom: 12px;
     grid-column: 2/11;
   }
   .header-content p {
-    font-family: "Lato";
+    font-family: Lato, sans-serif;
     font-size: 36px;
     grid-column: 2/11;
   }
@@ -467,23 +512,23 @@ nav {
   padding: var(--spacing);
   border-radius: var(--border-radius);
 }
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .product-cards .product-card img {
     max-height: 350px;
   }
 }
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .product-cards .product-card {
     grid-column: span calc(var(--columns) / 2);
   }
 }
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .product-cards .product-card {
     grid-column: span calc(var(--columns) / 4);
   }
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .product-cards {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: auto;
@@ -545,15 +590,16 @@ h1 {
   width: 100%;
 }
 .grid .middle-span-8 {
-  grid-column: 3/span 8;
+  grid-column: 3 / span 8;
 }
 
 .product-list {
   background-color: var(--coffee-with-milk);
 }
 
-@media (max-width: 1000px) {
+@media (width <= 1000px) {
   .products-new,
+  .product-list,
   .products-all {
     background-color: var(--coffee-with-milk);
   }
@@ -587,7 +633,7 @@ h1 {
   object-fit: cover;
   object-position: top center;
 }
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .content-new-cta img,
   .content-new-cta .text,
   .content-all-cta img,
@@ -595,14 +641,14 @@ h1 {
     grid-column: span calc(var(--columns) / 2);
   }
 }
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .content-new-cta img,
   .content-all-cta img {
-    grid-column: 3/span calc(var(--columns) / 3);
+    grid-column: 3 / span calc(var(--columns) / 3);
   }
   .content-new-cta .text,
   .content-all-cta .text {
-    grid-column: 7/span calc(var(--columns) / 3);
+    grid-column: 7 / span calc(var(--columns) / 3);
   }
 }
 
@@ -615,7 +661,7 @@ h1 {
   width: var(--width-offset);
 }
 .order .form {
-  grid-column: 1/span 6;
+  grid-column: 1 / span 6;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -656,7 +702,7 @@ h1 {
   color: var(--color-white);
 }
 .order .current-cart {
-  grid-column: 7/span 6;
+  grid-column: 7 / span 6;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -673,7 +719,7 @@ h1 {
 }
 .order .current-cart .product img,
 .order .current-cart .total img {
-  grid-column: 1/span 1;
+  grid-column: 1 / span 1;
   aspect-ratio: 1/1;
   height: 100%;
   object-fit: cover;
@@ -681,7 +727,7 @@ h1 {
 }
 .order .current-cart .product .title,
 .order .current-cart .total .title {
-  grid-column: 2/span 3;
+  grid-column: 2 / span 3;
 }
 .order .current-cart .product .price,
 .order .current-cart .total .price {
@@ -690,7 +736,7 @@ h1 {
 }
 .order .current-cart .product .text,
 .order .current-cart .total .text {
-  grid-column: 1/span 3;
+  grid-column: 1 / span 3;
   font-weight: bold;
 }
 .order .current-cart .product .sum,
@@ -705,7 +751,7 @@ h1 {
   border-bottom: 1px solid var(--coffee-with-milk);
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .order .form,
   .order .current-cart {
     grid-column: span var(--columns);
@@ -741,11 +787,11 @@ h1 {
   align-items: center;
 }
 .product-desc .text .buy p {
-  grid-column: 1/span 3;
+  grid-column: 1 / span 3;
   font-weight: bold;
 }
 .product-desc .text .buy button {
-  grid-column: 4/span 3;
+  grid-column: 4 / span 3;
   color: var(--black-coffee);
   border-color: var(--black-coffee);
   background-color: var(--color-white);
@@ -753,7 +799,7 @@ h1 {
   border-radius: var(--border-radius);
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .product-desc .half-span {
     grid-column: span var(--columns);
   }
@@ -798,7 +844,7 @@ h1 {
 .footer h1,
 .footer p,
 .footer a {
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
   color: #fefefe;
   text-decoration: none;
 }
@@ -837,6 +883,21 @@ h1 {
   grid-column: 3/11;
   border-top: 1px solid var(--color-coffee);
   text-align: center;
+}
+
+@media (width <= 999px) {
+  .opening-hours,
+  .contact,
+  .other {
+    grid-column: span var(--columns);
+  }
+  footer {
+    height: 527px;
+  }
+  .forms {
+    grid-template-rows: repeat(3, auto);
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
