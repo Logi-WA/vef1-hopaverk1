@@ -17,7 +17,7 @@
   h1,
   p,
   a {
-    font-family: "Lato";
+    font-family: Lato, sans-serif;
     color: #fefefe;
     text-decoration: none;
   }
@@ -61,7 +61,7 @@
   text-align: center;
 }
 
-@media (max-width: 999px) {
+@media (width <= 999px) {
   .opening-hours,
   .contact,
   .other {
@@ -71,9 +71,9 @@
   footer {
     height: 527px;
   }
-  
+
   .forms {
-    grid-template-rows: repeat(3, auto); 
+    grid-template-rows: repeat(3, auto);
     height: auto;
   }
 }

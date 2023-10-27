@@ -1,12 +1,12 @@
 .top-background {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgb(255 255 255 / 50%),
+      rgb(255 255 255 / 50%)
     ),
     url("./myndir/mob-bground.png");
   background-size: cover;
-  background-position-x: 0px;
-  background-position-y: 0px;
+  background-position-x: 0;
+  background-position-y: 0;
   position: relative;
   width: 100%;
   height: 322px;
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 262px; //testa height.
+  height: 262px;
   width: 100%;
 }
 
@@ -28,7 +28,7 @@
   h1 {
     font-weight: bold;
     font-size: 80px;
-    font-family: "Lato";
+    font-family: Lato, sans-serif;
     margin-bottom: 0;
     grid-column: span var(--columns);
   }
@@ -41,29 +41,29 @@
   }
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .top-background {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
+        rgb(255 255 255 / 50%),
+        rgb(255 255 255 / 50%)
       ),
       url("./myndir/mob-bground.png");
     background-size: cover;
-    background-position-x: 0px;
-    background-position-y: 0px;
+    background-position-x: 0;
+    background-position-y: 0;
     position: relative;
     width: 100%;
     height: 444px;
   }
 }
 
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .top-background {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
+        rgb(255 255 255 / 50%),
+        rgb(255 255 255 / 50%)
       ),
-      url("./myndir/desk-background.png");
+      url("./myndir/mob-bground.png");
     width: 100%;
     height: 565px;
   }
@@ -72,7 +72,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 505px; //testa height.
+    height: 505px;
     width: 100%;
   }
 
@@ -80,13 +80,13 @@
     h1 {
       font-weight: bold;
       font-size: 160px;
-      font-family: "Lato";
+      font-family: Lato, sans-serif;
       margin-bottom: 12px;
       grid-column: 2/11;
     }
 
     p {
-      font-family: "Lato";
+      font-family: Lato, sans-serif;
       font-size: 36px;
       grid-column: 2/11;
     }
